@@ -37,7 +37,8 @@ public class RDC1008CollectionParameterAnalyzer : DiagnosticAnalyzer
 
         foreach (var parameter in method!.Parameters)
         {
-            if (parameter.Type.SpecialType != SpecialType.System_String && parameter.Type.IsCollection())
+            
+            if (parameter.Type.IsCollection(context.Compilation))
             {
                 context.ReportDiagnostic
                 (

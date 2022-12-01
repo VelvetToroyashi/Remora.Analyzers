@@ -1,12 +1,17 @@
-﻿using System.Threading.Tasks;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.CodeAnalysis;
 using NUnit.Framework;
+using Remora.Commands.Attributes;
+using Remora.Commands.Groups;
 using Remora.Discord.API.Abstractions.Objects;
+using Remora.Discord.Commands.Attributes;
 using Remora.Results;
 
 namespace Remora.Discord.Commands.Analyzers.Tests;
 
-public class SlashCommandAnalyzerTests 
+public class SlashCommandAnalyzerTests : CommandGroup
 {
     [Test]
     public async Task EmitsRDC1005WhenNestedTooDeeply()
@@ -68,5 +73,32 @@ public class SlashCommandAnalyzerTests
             .WithSeverity(DiagnosticSeverity.Error);
 
         await Verifier<RDC1006SlashCommandNameTooLongAnalyzer>.VerifyAnalyzerAsync(source, expected);
+    }
+    
+    [Test]
+    public async Task EmitsRDC1008WhenCommandHasCollectionParameter()
+    {
+        const string source = """
+        using Remora.Commands;
+        using Remora.Commands.Groups;
+        using Remora.Commands.Attributes;
+        using Remora.Discord.API.Abstractions.Objects;
+        using Remora.Discord.Commands.Attributes; 
+        using Remora.Results;
+        using System.Collections.Generic;
+        using System.Threading.Tasks; 
+        
+        public class A : CommandGroup
+        {
+            [Command("test")]
+            public async Task<IResult> D(int[] arr) { return Result.FromSuccess(); }
+        }
+        """;
+        
+        var expected = Verifier<RDC1008CollectionParameterAnalyzer>.Diagnostic(DiagnosticDescriptors.RDC1008CollectionParameter.Id)
+            .WithLocation(13, 34)
+            .WithSeverity(DiagnosticSeverity.Error);
+
+        await Verifier<RDC1008CollectionParameterAnalyzer>.VerifyAnalyzerAsync(source, expected);
     }
 }

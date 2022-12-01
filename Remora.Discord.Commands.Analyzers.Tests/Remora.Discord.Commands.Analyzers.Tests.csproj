@@ -21,6 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Analyzer Include="..\Remora.Discord.Commands.Analyzers\bin\Release\netstandard2.0\Remora.Analyzers.Discord.Commands.dll" />
       <ProjectReference Include="..\Remora.Discord.Commands.Analyzers\Remora.Discord.Commands.Analyzers.csproj" />
     </ItemGroup>
 
