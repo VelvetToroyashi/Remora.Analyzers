@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remora.Discord.Commands.Analyzers", "Remora.Discord.Commands.Analyzers\Remora.Discord.Commands.Analyzers.csproj", "{AFF0ACCE-6F04-4184-8D65-712E09B14438}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{1060554D-5AA9-4FCC-9741-0286E5E037A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remora.Discord.Commands.Analyzers.Tests", "Remora.Discord.Commands.Analyzers.Tests\Remora.Discord.Commands.Analyzers.Tests.csproj", "{EB6552A9-EB96-4790-9728-7EC2169F42EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AFF0ACCE-6F04-4184-8D65-712E09B14438}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFF0ACCE-6F04-4184-8D65-712E09B14438}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFF0ACCE-6F04-4184-8D65-712E09B14438}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFF0ACCE-6F04-4184-8D65-712E09B14438}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB6552A9-EB96-4790-9728-7EC2169F42EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB6552A9-EB96-4790-9728-7EC2169F42EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB6552A9-EB96-4790-9728-7EC2169F42EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB6552A9-EB96-4790-9728-7EC2169F42EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EB6552A9-EB96-4790-9728-7EC2169F42EF} = {1060554D-5AA9-4FCC-9741-0286E5E037A9}
+	EndGlobalSection
+EndGlobal
