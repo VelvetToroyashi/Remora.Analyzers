@@ -10,10 +10,11 @@
         <NoPackageAnalysis>true</NoPackageAnalysis>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <Authors>VelvetThePanda</Authors>
-    </PropertyGroup>
-
-    <PropertyGroup>
-        <VersionPrefix>1.0.0-preview4</VersionPrefix>
+        <Version>1.0.0-preview1</Version>
+        <Description>A set of analyzers for Remora.Discord.Commands</Description>
+        <Copyright>VelvetThePanda, Nihlus, and contributors</Copyright>
+        <RepositoryUrl>https://github.com/VelvetThePanda/Remora.Analyzers</RepositoryUrl>
+        <PackageId>VTP.Remora.Discord.Commands.Analyzers</PackageId>
     </PropertyGroup>
 
     <ItemGroup>
